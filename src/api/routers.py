@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from src.libs.utils import execute_python_program_with_docker_sdk
+from src.libs.utils import execute_python_program_with_docker_sdk, run_container
 
 router = APIRouter()
 
@@ -19,7 +19,8 @@ def test_code(code: Code):
         dict: The output of the executed code.
     """
     try:
-        output = execute_python_program_with_docker_sdk(code.content)
-        return {"output": output}
+        # output = execute_python_program_with_docker_sdk(code.content)
+        output = run_container(code.content)
+        return {"output": output["output"]}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

@@ -28,6 +28,9 @@
 from fastapi import FastAPI
 from src.api.routers import router
 
+import docker
+import os
+
 app = FastAPI()
 
 # Include the API router

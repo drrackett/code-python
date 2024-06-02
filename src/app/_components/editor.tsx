@@ -11,6 +11,7 @@ import CodeOutput from "@/app/_components/code-output";
 export default function CodeEditorWrapper() {
   const editorRef = useRef<editor.IStandaloneCodeEditor | null>(null);
   const [output, setOutput] = useState<string>("");
+  const [testing, setTesting] = useState<boolean>(false);
 
   function handleEditorDidMount(
     editor: editor.IStandaloneCodeEditor | null,
