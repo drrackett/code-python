@@ -32,7 +32,7 @@ def build_image():
 # Function to run a Docker container with a temporary file and return the output
 def run_container(code):
     # Ensure the image is built
-    # build_image()
+    build_image()
     
     # Create a temporary file with the code
     with tempfile.NamedTemporaryFile(delete=False, suffix=".py") as temp_file:
@@ -51,8 +51,8 @@ def run_container(code):
             stderr=True
         )
         
-        # Wait for the container to finish execution
-        container.wait()
+        # Wait for the container to finish execution and get the exit status
+        exit_status = container.wait()
         
         # Capture the logs
         logs = container.logs(stdout=True, stderr=True)
@@ -60,6 +60,10 @@ def run_container(code):
 
         container.remove()
 
+        # Check if the exit status indicates an error
+        if exit_status["StatusCode"] != 0:
+            return {"output": None, "error": output}
+        
         return {"output": output, "error": None}
     except docker.errors.ContainerError as e:
         return {"output": None, "error": str(e)}

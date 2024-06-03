@@ -33,16 +33,54 @@ export default function CodeEditorWrapper() {
           body: JSON.stringify({ content: code }),
         });
 
-        if (!response.ok) {
-          throw new Error(`Error: ${response.statusText}`);
-        }
-
         const data = await response.json();
-        setOutput(data.output);
+
+        if (!response.ok) {
+          if (data.detail) {
+            setOutput(data.detail);
+          } else {
+            throw new Error(`Error: ${response.statusText}`);
+          }
+        } else {
+          setOutput(data.output);
+        }
       } catch (error) {
         console.error("Error testing code:", error);
         alert(
           "Failed to run the code. Please check the console for more details."
+        );
+      }
+    }
+  };
+
+  const handleSubmitOnClick = async () => {
+    if (editorRef.current) {
+      const code = editorRef.current.getValue();
+
+      try {
+        const response = await fetch("/api/codes/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ content: code }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          if (data.detail) {
+            setOutput(data.detail);
+          } else {
+            throw new Error(`Error: ${response.statusText}`);
+          }
+        } else {
+          setOutput(data.output);
+        }
+      } catch (error) {
+        console.error("Error submitting code:", error);
+        alert(
+          "Failed to submit the code. Please check the console for more details."
         );
       }
     }
@@ -60,7 +98,7 @@ export default function CodeEditorWrapper() {
               <TestCodeButton onClick={handleTestCodeOnClick}></TestCodeButton>
             </div>
             <div className="flex items-center">
-              <SubmitButton></SubmitButton>
+              <SubmitButton onClick={handleSubmitOnClick} />
             </div>
           </div>
         </div>

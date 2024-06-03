@@ -11,8 +11,3 @@ df = pd.DataFrame(data)
 # Print the DataFrame
 print("DataFrame:")
 print(df)
-
-# Perform a simple operation using scipy
-x = sp.linspace(0, 10, 5)
-print("Linspace using scipy:")
-print(x)
