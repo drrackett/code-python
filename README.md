@@ -11,7 +11,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. `python3 -m venv .venv`
 2. `source .venv/bin/activate`
 3. `python3 -m pip install -r requirements.txt`
-4. `npm run dev`
+4. `npm install`
+5. `npm run dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
