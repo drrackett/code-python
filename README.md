@@ -8,17 +8,39 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-1. `python3 -m venv .venv`
-2. `source .venv/bin/activate`
-3. `python3 -m pip install -r requirements.txt`
-4. `npm install`
-5. `npm run dev`
+1. Set up a Python virtual environment:
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+2. Install Python dependencies:
+
+   ```bash
+   python3 -m pip install -r requirements.txt
+   ```
+
+3. Install JavaScript dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Troubleshooting
+
+1. If you encounter an error saying "Error: Socket hang up," try clicking the "Test Code" button and/or the "Submit" button a couple of times.
 
 ## Learn More
 
