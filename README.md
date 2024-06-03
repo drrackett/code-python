@@ -47,6 +47,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 1. The user interface (UI) and user experience (UX) can be significantly improved.
 2. The database should be migrated to PostgreSQL or another production-grade database (to be researched).
 3. The database schemas most likely need to be reworked.
+4. Support for a multi-model editor (i.e., multiple files) should be added.
+5. Users should be allowed to input their own inputs.
 
 ## Learn More
 
