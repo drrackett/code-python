@@ -40,7 +40,13 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Troubleshooting
 
-1. If you encounter an error saying "Error: Socket hang up," try clicking the "Test Code" button and/or the "Submit" button a couple of times.
+1. If you encounter an error saying "Error: Socket hang up," try clicking the "Test Code" button and/or the "Submit" button a couple of times. This is likely due to the image for the Python execution environment not being completely built. Work is in progress to have the image prebuilt or built when loading the website for the first time.
+
+## Future Improvements
+
+1. The user interface (UI) and user experience (UX) can be significantly improved.
+2. The database should be migrated to PostgreSQL or another production-grade database (to be researched).
+3. The database schemas most likely need to be reworked.
 
 ## Learn More
 
