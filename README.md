@@ -30,7 +30,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 4. Build the Docker image:
 
    ```bash
-   docker build -t python_execution_environment
+   docker build -t python_execution_environment ./docker
    ```
 
 5. Start the development server:
