@@ -27,7 +27,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
    npm install
    ```
 
-4. Start the development server:
+4. Build the Docker image:
+
+   ```bash
+   docker build -t python_execution_environment
+   ```
+
+5. Start the development server:
    ```bash
    npm run dev
    ```
